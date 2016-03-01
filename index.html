@@ -23,10 +23,11 @@
       <div ng-controller="XkcdCtrl">
         <h1>{{xkcdRandomComic.title}} - xkcd</h1>
         <img alt={{xkcdRandomComic.alt}} ng-src={{xkcdRandomComic.img}}></img>
+        <div>{{xkcdRandomComic | json}}</div>
       </div>
     </div>
   </div>
 </div>
-<!--script tag may live here one day-->
+
 </body>
 </html>
