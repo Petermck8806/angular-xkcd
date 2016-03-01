@@ -7,9 +7,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css">
-  <script src="./controllers/ComicController.js"></script>
+  <script src="./controllers/XkcdDataController.js"></script>
 </head>
-<body ng-app="comicApp">
+<body ng-app="comicStaticApp">
 <div class="ui bottom attached segment pushable">
   <div class="ui visible inverted left vertical sidebar menu">
     <a href="./index.html" class="item">
@@ -20,9 +20,9 @@
   <div class="pusher">
     <div class="ui basic segment">
       <h3 class="ui header"></h3>
-      <div ng-controller="XkcdCtrl">
-        <h1>{{xkcdRandomComic.title}} - xkcd</h1>
-        <img alt={{xkcdRandomComic.alt}} ng-src={{xkcdRandomComic.img}}></img>
+      <div ng-controller="XkcdStaticCtrl">
+        <h1> - xkcd</h1>
+        <img alt="" src="" img>
       </div>
     </div>
   </div>
