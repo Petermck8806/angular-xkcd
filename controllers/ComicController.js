@@ -18,7 +18,8 @@ comicApp.factory('xkcdSvc', function($http){
 });
 
 comicApp.controller('XkcdCtrl', function($scope, xkcdSvc, $interpolate) {
- 
+  $scope.debug = true;
+
   $scope.getNextComic = function(){
     xkcdSvc.getXkcdComic(recentComicString).then(function(comic) {
       var id = getRandomInt(1, comic.num);

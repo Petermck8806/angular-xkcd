@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css">
   <script src="./controllers/ComicController.js"></script>
 </head>
-<body ng-app="comicApp">
+<body ng-app="comicApp" ng-cloak>
   <div class="ui bottom attached segment pushable">
     <div class="ui visible inverted left vertical sidebar menu">
       <a href="./index.html" class="item">
@@ -22,12 +22,12 @@
         <div ng-controller="XkcdCtrl">
           <h1>{{xkcdRandomComic.title}}</h1>
           <img alt={{xkcdRandomComic.alt}} ng-src={{xkcdRandomComic.img}}></img>
-          <p>{{xkcdRandomComic.alt}}</p>
+          <p ng-bind="xkcdRandomComic.alt"></p>
           <button ng-click="getNextComic()" class="ui right labeled icon button">
             <i class="right arrow icon"></i>
             Next
           </button>
-          <!-- <div>{{xkcdRandomComic | json}}</div> -->
+          <div ng-show="debug">{{xkcdRandomComic | json}}</div> 
         </div>
       </div>
     </div>
