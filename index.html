@@ -10,24 +10,28 @@
   <script src="./controllers/ComicController.js"></script>
 </head>
 <body ng-app="comicApp">
-<div class="ui bottom attached segment pushable">
-  <div class="ui visible inverted left vertical sidebar menu">
-    <a href="./index.html" class="item">
-      <i class="home icon"></i>
-      Home
-    </a>
-  </div>
-  <div class="pusher">
-    <div class="ui basic segment">
-      <h3 class="ui header"></h3>
-      <div ng-controller="XkcdCtrl">
-        <h1>{{xkcdRandomComic.title}} - xkcd</h1>
-        <img alt={{xkcdRandomComic.alt}} ng-src={{xkcdRandomComic.img}}></img>
-        <div>{{xkcdRandomComic | json}}</div>
+  <div class="ui bottom attached segment pushable">
+    <div class="ui visible inverted left vertical sidebar menu">
+      <a href="./index.html" class="item">
+        <i class="home icon"></i>
+        Home
+      </a>
+    </div>
+    <div class="pusher">
+      <div class="ui basic segment">
+        <div ng-controller="XkcdCtrl">
+          <h1>{{xkcdRandomComic.title}}</h1>
+          <img alt={{xkcdRandomComic.alt}} ng-src={{xkcdRandomComic.img}}></img>
+          <p>{{xkcdRandomComic.alt}}</p>
+          <button ng-click="getNextComic()" class="ui right labeled icon button">
+            <i class="right arrow icon"></i>
+            Next
+          </button>
+          <!-- <div>{{xkcdRandomComic | json}}</div> -->
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 </body>
 </html>
