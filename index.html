@@ -20,18 +20,14 @@
     <div class="pusher">
       <div class="ui basic segment">
         <div ng-controller="XkcdCtrl">
-          <h1>{{xkcdRandomComic.title}}</h1>
-          <img alt={{xkcdRandomComic.alt}} ng-src={{xkcdRandomComic.img}}></img>
-          <p ng-bind="xkcdRandomComic.alt"></p>
-          <button ng-click="getNextComic()" class="ui right labeled icon button">
+          <h1>{{xkcd.title}}</h1>
+          <img alt={{xkcd.alt}} ng-src={{xkcd.img}}></img>
+          <p ng-bind="xkcd.alt"></p>
+          <button ng-click="getRandomComic()" class="ui right labeled icon button">
             <i class="right arrow icon"></i>
             Next
           </button>
-          <pre ng-show="debug">{{xkcdRandomComic | json}}</pre> 
-          <div ng-show="debug">{{ 342.234213332 | number:2}}</div>
-          <ul ng-show="debug">
-            <li ng-repeat="sample in samples" ng-bind-template="{{sample.name}}{{sample.snippet}}"></li>
-          </ul>
+          <pre>{{xkcd | json}}</pre> 
         </div>
       </div>
     </div>

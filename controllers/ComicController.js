@@ -18,35 +18,26 @@ comicApp.factory('xkcdSvc', function($http){
 });
 
 comicApp.controller('XkcdCtrl', function($scope, xkcdSvc, $interpolate) {
-  $scope.debug = true;
-
-  $scope.getNextComic = function(){
+  $scope.getRandomComic = function(){
     xkcdSvc.getXkcdComic(recentComicString).then(function(comic) {
       var id = getRandomInt(1, comic.num);
 
-    //exclude 404 
-    while(id == 404){
-      id = getRandomInt(1,comic.num);
-    }
+      //exclude 404 
+      while(id == 404){
+        id = getRandomInt(1,comic.num);
+      }
 
-    $scope.id = id;
-    var comicUrl = $interpolate(xkcdJsonString)($scope);
+      $scope.id = id;
+      var comicUrl = $interpolate(xkcdJsonString)($scope);
 
-    xkcdSvc.getXkcdComic(comicUrl).then(function(randomComic){
-      $scope.xkcdRandomComic = randomComic;
+      xkcdSvc.getXkcdComic(comicUrl).then(function(randomComic){
+        $scope.xkcd = randomComic;
+      });
     });
-  });
-}
+  }
 
   //initialize comic at page load.
-  $scope.getNextComic();
-
-  $scope.samples = [
-  {'name' : 'fake name 1',
-  'snippet' : 'here is a fake description'},
-  {'name' : 'fake name 2',
-  'snippet': 'here is another fake description'}
-  ];
+  $scope.getRandomComic();
 
   //return random Integer inclusive of the range
   function getRandomInt(min, max){
