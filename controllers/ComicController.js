@@ -47,7 +47,7 @@ comicApp.controller('XkcdCtrl', function($scope, xkcdSvc, $interpolate) {
   {'name' : 'fake name 2',
   'snippet': 'here is another fake description'}
   ];
-  
+
   //return random Integer inclusive of the range
   function getRandomInt(min, max){
     return Math.floor(Math.random() * (max - min + 1)) + min;

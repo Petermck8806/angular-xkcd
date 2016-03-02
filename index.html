@@ -28,9 +28,9 @@
             Next
           </button>
           <div ng-show="debug">{{xkcdRandomComic | json}}</div> 
-          <div>{{ 342.234213332 | number:2}}</div>
-          <ul>
-            <li ng-repeat="sample in samples">{{sample.name}}</li>
+          <div ng-show="debug">{{ 342.234213332 | number:2}}</div>
+          <ul ng-show="debug">
+            <li ng-repeat="sample in samples" ng-bind-template="{{sample.name}}{{sample.snippet}}"></li>
           </ul>
         </div>
       </div>
