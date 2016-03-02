@@ -18,7 +18,7 @@ comicApp.factory('xkcdSvc', function($http){
 });
 
 comicApp.controller('XkcdCtrl', function($scope, xkcdSvc, $interpolate) {
-  $scope.debug = false;
+  $scope.debug = true;
 
   $scope.getNextComic = function(){
     xkcdSvc.getXkcdComic(recentComicString).then(function(comic) {

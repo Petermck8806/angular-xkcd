@@ -27,7 +27,7 @@
             <i class="right arrow icon"></i>
             Next
           </button>
-          <div ng-show="debug">{{xkcdRandomComic | json}}</div> 
+          <pre ng-show="debug">{{xkcdRandomComic | json}}</pre> 
           <div ng-show="debug">{{ 342.234213332 | number:2}}</div>
           <ul ng-show="debug">
             <li ng-repeat="sample in samples" ng-bind-template="{{sample.name}}{{sample.snippet}}"></li>
