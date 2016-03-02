@@ -18,7 +18,7 @@ comicApp.factory('xkcdSvc', function($http){
 });
 
 comicApp.controller('XkcdCtrl', function($scope, xkcdSvc, $interpolate) {
-  $scope.debug = true;
+  $scope.debug = false;
 
   $scope.getNextComic = function(){
     xkcdSvc.getXkcdComic(recentComicString).then(function(comic) {
@@ -36,11 +36,18 @@ comicApp.controller('XkcdCtrl', function($scope, xkcdSvc, $interpolate) {
       $scope.xkcdRandomComic = randomComic;
     });
   });
-  }
+}
 
   //initialize comic at page load.
   $scope.getNextComic();
 
+  $scope.samples = [
+  {'name' : 'fake name 1',
+  'snippet' : 'here is a fake description'},
+  {'name' : 'fake name 2',
+  'snippet': 'here is another fake description'}
+  ];
+  
   //return random Integer inclusive of the range
   function getRandomInt(min, max){
     return Math.floor(Math.random() * (max - min + 1)) + min;

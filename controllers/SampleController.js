@@ -1,4 +1,4 @@
-var sampleApp = angular.module('sampleApp',[]);
+var sampleApp = angular.module('comicApp',[]);
 
 sampleApp.controller('SampleListCtrl', function($scope){
   $scope.samples = [
